@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://fveoe2lrrnhk"]
+
+[ext_resource type="FontFile" uid="uid://cp3dchprrlgur" path="res://tasks/task_09_ayyub/Assets/m5x7.ttf" id="1_xsv02"]
+[ext_resource type="Script" uid="uid://ctqjm3yqsdfr8" path="res://tasks/task_09_ayyub/Scripts/L1_NarrativeManager.gd" id="1_xxei2"]
+[ext_resource type="Texture2D" uid="uid://5a1hprob7nbt" path="res://tasks/task_09_ayyub/Assets/Tessema_Portrait.png" id="2_ltrro"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxei2"]
+bg_color = Color(0.24313726, 0.15294118, 0.13725491, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.88919204, 0.61978555, 0.6041972, 0.96862745)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+anti_aliasing = false
+
+[node name="L1_NarrativeUI" type="Control" unique_id=1958253515]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xxei2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=906852856]
+layer = 10
+
+[node name="BackgroundDimmer" type="ColorRect" parent="CanvasLayer" unique_id=1674340042]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer" unique_id=2111856056]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -165.0
+offset_right = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxei2")
+
+[node name="Portrait" type="TextureRect" parent="CanvasLayer/DialogueBox" unique_id=1735056925]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -95.0
+offset_right = 139.0
+offset_bottom = 33.0
+texture = ExtResource("2_ltrro")
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/DialogueBox" unique_id=980491450]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 37.0
+offset_right = 130.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(1.0474925, 0.7318739, 0.7135772, 0.96862745)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6156863)
+theme_override_fonts/font = ExtResource("1_xsv02")
+theme_override_font_sizes/font_size = 24
+
+[node name="TextLabel" type="RichTextLabel" parent="CanvasLayer/DialogueBox" unique_id=142880978]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 25.0
+offset_right = 1006.0
+offset_bottom = 144.0
+theme_override_colors/default_color = Color(0.8901961, 0.61960787, 0.6039216, 0.96862745)
+theme_override_colors/font_selected_color = Color(0.33565012, 0.34611648, 0.26193157, 0)
+theme_override_fonts/normal_font = ExtResource("1_xsv02")
+theme_override_fonts/bold_font = ExtResource("1_xsv02")
+theme_override_fonts/bold_italics_font = ExtResource("1_xsv02")
+theme_override_fonts/italics_font = ExtResource("1_xsv02")
+theme_override_fonts/mono_font = ExtResource("1_xsv02")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+
+[node name="NextArrow" type="Label" parent="CanvasLayer/DialogueBox" unique_id=1128324853]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1062.0
+offset_top = -47.0
+offset_right = -25.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.8901961, 0.61960787, 0.6039216, 0.96862745)
+theme_override_font_sizes/font_size = 24
+text = ">>"
+
+[node name="TypingTimer" type="Timer" parent="." unique_id=847998850]
