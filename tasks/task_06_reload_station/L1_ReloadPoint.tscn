@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://nrstgok3x12p"]
+
+[ext_resource type="Script" uid="uid://pbi6j1mjfwl8" path="res://tasks/task_06_reload_station/L1_ReloadPoint.gd" id="1_uu5cn"]
+[ext_resource type="Texture2D" uid="uid://hvqbhndf3g4c" path="res://tasks/task_06_reload_station/L1_StonePile.png" id="2_yddl7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mois"]
+radius = 29.78524
+
+[node name="L1_ReloadPoint" type="Area2D" unique_id=1145854754 groups=["Objective"]]
+y_sort_enabled = true
+scale = Vector2(1e-05, 1e-05)
+collision_layer = 2
+script = ExtResource("1_uu5cn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=83642522]
+texture_filter = 1
+scale = Vector2(1e-05, 1e-05)
+texture = ExtResource("2_yddl7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1806921821]
+position = Vector2(-2.3841858e-07, -6.0000005)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_6mois")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
