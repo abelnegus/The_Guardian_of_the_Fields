@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cvtlyv1w4v2j6"]
+
+[ext_resource type="Script" uid="uid://bk8fi3fstjh4h" path="res://Level2/DustDevil/arrow.gd" id="1_a8t2u"]
+[ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="2_08ca5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5m2i"]
+
+[node name="Arrow" type="CharacterBody2D" unique_id=505242948 groups=["arrow"]]
+script = ExtResource("1_a8t2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1762247736]
+texture = ExtResource("2_08ca5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=824282322]
+shape = SubResource("CircleShape2D_i5m2i")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ce6sxhk0xrmfb"]
+
+[ext_resource type="PackedScene" uid="uid://dk3s8kofjguk2" path="res://Level2/DustDevil/DustDevil.tscn" id="1_sllqc"]
+[ext_resource type="PackedScene" uid="uid://cvtlyv1w4v2j6" path="res://Level2/DustDevil/Arrow.tscn" id="2_qteti"]
+
+[node name="Main" type="Node2D" unique_id=1180281992]
+position = Vector2(118, 308)
+
+[node name="DustDevil" parent="." unique_id=739575405 instance=ExtResource("1_sllqc")]
+position = Vector2(532, 13)
+
+[node name="Arrow" parent="." unique_id=505242948 instance=ExtResource("2_qteti")]
