@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://wt6aygpodbl1"]
+
+[ext_resource type="Script" uid="uid://ij1nrovki8x2" path="res://tasks/task_05_yohannes/l_1_kolo.gd" id="1_3cf36"]
+[ext_resource type="Texture2D" uid="uid://bumo4k0rp8s0a" path="res://tasks/task_05_yohannes/L1_Kolo_Buff.png" id="1_ghof1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3cf36"]
+radius = 32.0
+
+[node name="eagleye" type="Area2D" unique_id=1046219822]
+script = ExtResource("1_3cf36")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1507058869]
+texture = ExtResource("1_ghof1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2028152770]
+shape = SubResource("CircleShape2D_3cf36")
+
+[node name="BuffTimer" type="Timer" parent="." unique_id=881432862]
+wait_time = 8.0
+one_shot = true
