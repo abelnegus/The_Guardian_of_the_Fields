@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://crp4noun2n5g1"]
+
+[ext_resource type="PackedScene" uid="uid://dionla2ha2gh1" path="res://Scenes/Templates/Base_Hazard.tscn" id="1_vkunh"]
+[ext_resource type="Script" uid="uid://c8t1wrl3yxb08" path="res://Scenes/NPCs/l_1_baboon.gd" id="2_7d6ou"]
+[ext_resource type="Texture2D" uid="uid://rtilywqsniit" path="res://Assets/Sprites/L1/L1_baboon.png" id="2_c5nld"]
+[ext_resource type="AudioStream" uid="uid://dddtprmjqk5tu" path="res://Assets/Audio/L1/L1_Baboon_Grunt.wav" id="3_7d6ou"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7d6ou"]
+radius = 44.0
+height = 90.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nk7b6"]
+atlas = ExtResource("2_c5nld")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw15j"]
+atlas = ExtResource("2_c5nld")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx8b3"]
+atlas = ExtResource("2_c5nld")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j1so"]
+atlas = ExtResource("2_c5nld")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlv52"]
+atlas = ExtResource("2_c5nld")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86n3l"]
+atlas = ExtResource("2_c5nld")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ki7r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nk7b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw15j")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx8b3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j1so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlv52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86n3l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="L1_Baboon" unique_id=221807019 instance=ExtResource("1_vkunh")]
+script = ExtResource("2_7d6ou")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1329763678]
+visible = false
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1165536811]
+shape = SubResource("CapsuleShape2D_7d6ou")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="3" unique_id=847397574]
+position = Vector2(-2.5, -3.499998)
+scale = Vector2(1.078125, 1.171875)
+sprite_frames = SubResource("SpriteFrames_3ki7r")
+animation = &"walk"
+
+[node name="GruntAudio" type="AudioStreamPlayer2D" parent="." index="4" unique_id=1967403726 groups=["active_audio_nodes"]]
+position = Vector2(0, 2)
+stream = ExtResource("3_7d6ou")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="5" unique_id=246002160]
