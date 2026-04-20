@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://db6j1cbj62l6t"]
+
+[ext_resource type="Script" uid="uid://be2we1xrdjgrl" path="res://tasks/l_1_main.gd" id="1_khyfj"]
+[ext_resource type="Script" uid="uid://dhqhaw66qpqo6" path="res://tasks/hud.gd" id="2_kvjn1"]
+[ext_resource type="Texture2D" uid="uid://dgpe02bvam44h" path="res://assets/sprites/L1/assets/L1_IntegrityBar.png" id="3_el2ny"]
+[ext_resource type="Texture2D" uid="uid://dt7gvrujg7t14" path="res://assets/sprites/L1/assets/L1_AmmoBar.png" id="4_iqlfv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1j74"]
+radius = 22.803509
+
+[sub_resource type="GDScript" id="GDScript_ahaal"]
+script/source = "extends Marker2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_4yw1r"]
+vertices = PackedVector2Array(386.0703, -186.00781, 388.92188, 189.88281, -387.65625, 181.07031, -380.07813, -186.96875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-390, -191, -398, 197, -394, 191, 399, 200, 396, -196, -398, -197)])
+
+[node name="L1Main" type="Node2D" unique_id=325161907]
+script = ExtResource("1_khyfj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1739547460]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=118948749]
+position = Vector2(-746, -493)
+shape = SubResource("CircleShape2D_c1j74")
+
+[node name="PlayerSpawnPoint" type="Marker2D" parent="." unique_id=987916823]
+position = Vector2(261, 323)
+script = SubResource("GDScript_ahaal")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1708634427]
+limit_enabled = false
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1315093437]
+script = ExtResource("2_kvjn1")
+
+[node name="IntegrityBar" type="TextureProgressBar" parent="HUD" unique_id=435590676]
+custom_minimum_size = Vector2(200, 10)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 372.0
+offset_bottom = 60.0
+value = 100.0
+nine_patch_stretch = true
+texture_progress = ExtResource("3_el2ny")
+
+[node name="AmmoBar" type="TextureProgressBar" parent="HUD" unique_id=1694954174]
+custom_minimum_size = Vector2(200, 10)
+offset_left = 31.0
+offset_top = 54.0
+offset_right = 302.0
+offset_bottom = 94.0
+max_value = 8.0
+value = 8.0
+nine_patch_stretch = true
+texture_progress = ExtResource("4_iqlfv")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1643139249]
+navigation_polygon = SubResource("NavigationPolygon_4yw1r")
