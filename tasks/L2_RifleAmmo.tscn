@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cgvlpmgrn6fku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tfhb"]
+
+[node name="RifleAmmo" type="Area2D" unique_id=1698301094]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478460894]
+position = Vector2(44, -175)
+shape = SubResource("RectangleShape2D_2tfhb")

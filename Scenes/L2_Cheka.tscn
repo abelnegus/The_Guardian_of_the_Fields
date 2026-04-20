@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cjdxvq0v2e2bn"]
+
+[ext_resource type="Script" uid="uid://besthk76x30r3" path="res://Scripts/cheka_bottle.gd" id="1_tdhc6"]
+[ext_resource type="Texture2D" uid="uid://v6wfwq1p376x" path="res://Assets/L2/L2_Cheka.png" id="2_g3081"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsaab"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c0dy5"]
+load_path = "res://.godot/imported/L2_RifleAmmo.png-9ac01e9a207acad17bbd54792bdade66.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tfhb"]
+
+[node name="Node2D" type="Node2D" unique_id=628409714]
+metadata/_edit_vertical_guides_ = [287.0]
+
+[node name="ChekaBottle" type="Area2D" parent="." unique_id=540642056]
+script = ExtResource("1_tdhc6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ChekaBottle" unique_id=2106493953]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChekaBottle" unique_id=179359987]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_rsaab")
+
+[node name="L2Cheka" type="Sprite2D" parent="ChekaBottle" unique_id=2041299818]
+position = Vector2(268, -63)
+texture = ExtResource("2_g3081")
+
+[node name="L2RifleAmmo" type="Sprite2D" parent="." unique_id=270236383]
+position = Vector2(427, -87)
+texture = SubResource("CompressedTexture2D_c0dy5")
+
+[node name="RifleAmmo" type="Area2D" parent="." unique_id=1222477807]
+position = Vector2(120, 79)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RifleAmmo" unique_id=1177954479]
+position = Vector2(44, -175)
+shape = SubResource("RectangleShape2D_2tfhb")
