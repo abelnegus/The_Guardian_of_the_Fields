@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dk3s8kofjguk2"]
+
+[ext_resource type="Script" uid="uid://vnlev1ydxyi" path="res://Level2/DustDevil/DustDevil.gd" id="1_cbynj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w3tb5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlyra"]
+
+[node name="DustDevil" type="CharacterBody2D" unique_id=739575405]
+script = ExtResource("1_cbynj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=717754768]
+shape = SubResource("CircleShape2D_w3tb5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1142027734]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1487753870]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1841304835]
+shape = SubResource("CircleShape2D_xlyra")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
