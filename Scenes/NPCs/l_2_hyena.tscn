@@ -74,8 +74,6 @@ animations = [{
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_5oo6x")
-speed = null
-damage = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1453817433]
 
