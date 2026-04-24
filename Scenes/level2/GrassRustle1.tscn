@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cyoncm4pn02fs"]
+
+[ext_resource type="Texture2D" uid="uid://ct42lhdd1htne" path="res://Assets/ui/New Piskel-1.png.png" id="1_7gxah"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d5kdi"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 95.69
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 50, 0)
+scale_min = 5.0
+scale_max = 5.0
+
+[node name="GrassRustle1" type="Node2D" unique_id=2006211477]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1769053914]
+texture = ExtResource("1_7gxah")
+
+[node name="Rustle" type="GPUParticles2D" parent="." unique_id=352657504]
+amount = 30
+texture = ExtResource("1_7gxah")
+lifetime = 0.48
+explosiveness = 1.0
+collision_base_size = 0.0
+process_material = SubResource("ParticleProcessMaterial_d5kdi")
