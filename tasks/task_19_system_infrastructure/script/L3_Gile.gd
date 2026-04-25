@@ -18,10 +18,11 @@ func _process(delta):
 	# Automatically detect enemies in hazard group
 	var enemies = get_tree().get_nodes_in_group("hazard")
 	for enemy in enemies:
-		var dist = global_position.distance_to(enemy.global_position)
-		if dist <= attack_range:
-			trigger_attack(enemy)
-			break
+		if enemy is Node2D:
+			var dist = global_position.distance_to(enemy.global_position)
+			if dist <= attack_range:
+				trigger_attack(enemy)
+				break
 
 func trigger_attack(enemy):
 	is_attacking = true
