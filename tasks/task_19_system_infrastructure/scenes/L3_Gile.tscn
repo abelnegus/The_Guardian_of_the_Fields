@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://h43xffgjg17j" path="res://tasks/task_19_system_infrastructure/script/L3_Gile.gd" id="1_rux2b"]
 [ext_resource type="Texture2D" uid="uid://ga224sf4f6od" path="res://tasks/task_19_system_infrastructure/assets/sprites/L3_Gile.png" id="2_rux2b"]
 [ext_resource type="Texture2D" uid="uid://cs2yp1t527kwo" path="res://tasks/task_19_system_infrastructure/assets/sprites/effects/L3_blade_slash_2.png" id="3_rux2b"]
-[ext_resource type="AudioStream" uid="uid://dbgx2vo857u83" path="res://tasks/task_19_system_infrastructure/assets/audio/melee sound.wav" id="4_0r13f"]
+[ext_resource type="AudioStream" uid="uid://dbgx2vo857u83" path="res://tasks/task_19_system_infrastructure/assets/audio/L3_blade_swoosh.wav" id="4_ql1ae"]
 [ext_resource type="Texture2D" uid="uid://ye8w0a40o8l0" path="res://tasks/task_19_system_infrastructure/assets/sprites/effects/L3_blade_slash.png" id="5_ql1ae"]
 
 [sub_resource type="Animation" id="Animation_p1t5m"]
@@ -211,7 +211,7 @@ scale = Vector2(1.785714, 3.124011)
 texture = ExtResource("3_rux2b")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1467998734]
-stream = ExtResource("4_0r13f")
+stream = ExtResource("4_ql1ae")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1971703057]
 libraries/ = SubResource("AnimationLibrary_1tmw0")
