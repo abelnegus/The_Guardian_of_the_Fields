@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://iw7y43wmoeil"]
+
+[ext_resource type="Script" uid="uid://dk0y4mmpmwrdr" path="res://tasks/S-15_kaleabe/test_friendly_fire.gd" id="1_ihoj5"]
+
+[node name="test_friendly_fire" type="Node2D" unique_id=60735875]
+script = ExtResource("1_ihoj5")

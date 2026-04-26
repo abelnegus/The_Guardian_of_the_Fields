@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://no84h8dtmgo5"]
+
+[ext_resource type="Script" uid="uid://dii244s5b11k8" path="res://auto_tester.gd" id="1_ah4it"]
+[ext_resource type="PackedScene" uid="uid://brm6hho34imwb" path="res://tasks/S-15_kaleabe/dust_storm_system.tscn" id="2_3kae1"]
+
+[node name="final_working_test" type="Node2D" unique_id=2086694558]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1693591162]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.41250002, 0.3996094, 0.3996094, 1)
+
+[node name="AutoTester" type="Node" parent="." unique_id=1745082912]
+script = ExtResource("1_ah4it")
+
+[node name="DustStormSystem" parent="." unique_id=1798293023 instance=ExtResource("2_3kae1")]

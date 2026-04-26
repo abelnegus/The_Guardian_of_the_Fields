@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://nadvavqnm1le"]
+
+[ext_resource type="Script" uid="uid://dhw01ykcrtrn4" path="res://tasks/S-15_kaleabe/test_controller.gd" id="1_8hrhy"]
+[ext_resource type="PackedScene" uid="uid://brm6hho34imwb" path="res://tasks/S-15_kaleabe/dust_storm_system.tscn" id="2_f7o70"]
+[ext_resource type="Script" uid="uid://cwsbmoko66q5y" path="res://tasks/S-15_kaleabe/button_controller.gd" id="3_moyyd"]
+
+[node name="TestDustStorm" type="Node2D" unique_id=1219820660]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1959281674]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.5294118, 0.80784315, 0.92156863, 1)
+
+[node name="TestController" type="Node" parent="." unique_id=473792540]
+script = ExtResource("1_8hrhy")
+
+[node name="ButtonController" type="Node" parent="." unique_id=1066149686]
+script = ExtResource("3_moyyd")
+
+[node name="DustStormSystem" parent="." unique_id=1798293023 instance=ExtResource("2_f7o70")]

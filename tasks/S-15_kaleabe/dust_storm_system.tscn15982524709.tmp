@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://brm6hho34imwb"]
+
+[ext_resource type="Script" uid="uid://cl5ri3508p8os" path="res://tasks/S-15_kaleabe/dust_storm_controller.gd" id="1_ucx3i"]
+
+[sub_resource type="Gradient" id="Gradient_t37nc"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fx1xv"]
+gradient = SubResource("Gradient_t37nc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_djud3"]
+particle_flag_disable_z = true
+direction = Vector3(0.3, -1, 0)
+spread = 180.0
+initial_velocity_min = 15.0
+initial_velocity_max = 50.0
+angular_velocity_min = -50.000015
+angular_velocity_max = 29.999983
+gravity = Vector3(0, 20, 0)
+scale_min = 0.08
+scale_max = 0.25
+
+[node name="DustStormSystem" type="Node2D" unique_id=1798293023]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1022940139]
+color = Color(0.007843138, 0, 0, 1)
+
+[node name="DustParticles" type="GPUParticles2D" parent="." unique_id=78053017]
+amount = 400
+texture = SubResource("GradientTexture2D_fx1xv")
+lifetime = 3.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_djud3")
+
+[node name="DustParticles2" type="GPUParticles2D" parent="." unique_id=1260973525]
+position = Vector2(200, 0)
+amount = 400
+texture = SubResource("GradientTexture2D_fx1xv")
+lifetime = 3.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_djud3")
+
+[node name="DustParticles3" type="GPUParticles2D" parent="." unique_id=135966904]
+position = Vector2(-200, 0)
+amount = 400
+texture = SubResource("GradientTexture2D_fx1xv")
+lifetime = 3.0
+randomness = 0.5
+process_material = SubResource("ParticleProcessMaterial_djud3")
+
+[node name="DustStormController" type="Node" parent="." unique_id=277836680]
+script = ExtResource("1_ucx3i")
