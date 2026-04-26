@@ -1,6 +1,7 @@
 extends Node
 class_name HeatManager
 
+# =========================
 # DEPENDENCIES (Clean Architecture)
 # =========================
 @export_group("Dependencies")
@@ -8,6 +9,7 @@ class_name HeatManager
 ## If left null, the manager will attempt to resolve "/root/Global" at runtime.
 @export var state_node: Node 
 
+# =========================
 # CONFIGURATION
 # =========================
 @export_group("Survival Settings")
@@ -17,16 +19,19 @@ class_name HeatManager
 @export_group("Audio Settings")
 @export var low_thirst_threshold: float = 30.0      # heartbeat trigger threshold
 
+# =========================
 # SIGNALS 
 # =========================
 signal thirst_changed(value: float)         
 signal thirst_changed_ui(value: float)      
 signal thirst_depleted()                    
 
+# =========================
 # NODE REFERENCES
 # =========================
 @onready var heartbeat_sfx: AudioStreamPlayer2D = $HeartbeatSFX
 
+# =========================
 # INTERNAL STATE
 # =========================
 var _was_depleted: bool = false
@@ -37,8 +42,13 @@ const AUDIO_ENTER_THRESHOLD: float = 30.0
 const AUDIO_EXIT_THRESHOLD: float = 32.0
 var _audio_active: bool = false
 
-# LIFECYCLE
 # =========================
+# LIFECYCLE FUNCTIONS
+# =========================
+
+## Called when the node enters the scene tree for the first time.
+## Implies: Sets up the Dependency Injection fallback and validates all settings 
+## before the game loop starts to prevent silent crashes later.
 func _ready() -> void:
 	# Fallback for Autoload environment if DI is not passed via Inspector
 	if not state_node:
@@ -48,6 +58,10 @@ func _ready() -> void:
 	_validate_config()
 	_initialize_audio()
 
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+## Implies: Uses a Fixed Timestep Accumulator instead of raw frame-rate math.
+## This guarantees the survival math runs exactly at the TICK_RATE, preventing
+## players on high-FPS monitors from losing thirst faster due to float drift.
 func _process(delta: float) -> void:
 	if not state_node: return # Safety check
 		
@@ -60,8 +74,14 @@ func _process(delta: float) -> void:
 	
 	_update_audio()
 
-# CORE LOGIC
 # =========================
+# CORE LOGIC FUNCTIONS
+# =========================
+
+## Decrements the player's thirst and broadcasts signals to other systems.
+## Implies: Sanitizes external data (clampf) to prevent bugs from other scripts. 
+## It uses "Signal Layering" to send high-frequency data to the backend, 
+## but only sends UI signals when the integer changes to prevent UI stuttering.
 func _update_thirst(delta: float) -> void:
 	state_node.player_thirst = clampf(state_node.player_thirst, 0.0, 100.0)
 	var previous: float = state_node.player_thirst
@@ -72,18 +92,25 @@ func _update_thirst(delta: float) -> void:
 		100.0
 	)
 
+	# High-frequency signal for backend systems
 	if not is_equal_approx(previous, state_node.player_thirst):
 		thirst_changed.emit(state_node.player_thirst)
 
+	# Throttled signal for the UI progress bar
 	if floor(previous) != floor(state_node.player_thirst):
 		thirst_changed_ui.emit(state_node.player_thirst)
 
+	# State transition for reaching 0 thirst
 	if state_node.player_thirst <= 0.0 and not _was_depleted:
 		_was_depleted = true
 		thirst_depleted.emit()
 	elif state_node.player_thirst > 0.0:
 		_was_depleted = false
 
+## Deducts health from the caravan when the player is entirely out of water.
+## Implies: We only enforce the floor (0.0) of the herd_integrity. We intentionally 
+## do not clamp the ceiling (100.0) so we don't accidentally overwrite healing buffs 
+## applied by other teammates' systems.
 func _apply_herd_penalty(delta: float) -> void:
 	if state_node.player_thirst <= 0.0:
 		state_node.herd_integrity = max(
@@ -91,8 +118,13 @@ func _apply_herd_penalty(delta: float) -> void:
 			0.0
 		)
 
-# AUDIO SYSTEM 
 # =========================
+# AUDIO SYSTEM FUNCTIONS
+# =========================
+
+## Manages the heartbeat audio state and pitch scaling.
+## Implies: Uses "Hysteresis" (different enter/exit thresholds) to prevent the 
+## audio from rapidly stuttering on and off if thirst hovers exactly at 30.0.
 func _update_audio() -> void:
 	if not heartbeat_sfx or not state_node:
 		return
@@ -103,6 +135,7 @@ func _update_audio() -> void:
 		_audio_active = false
 
 	if _audio_active:
+		# Safe math to prevent division by zero if a designer sets threshold to 0
 		var safe_threshold: float = max(low_thirst_threshold, 0.01)
 		var intensity: float = 1.0 - (state_node.player_thirst / safe_threshold)
 		intensity = clampf(intensity, 0.0, 1.0)
@@ -115,13 +148,19 @@ func _update_audio() -> void:
 		if heartbeat_sfx.playing:
 			heartbeat_sfx.stop()
 
+## Resets audio to default state upon initialization.
 func _initialize_audio() -> void:
 	if heartbeat_sfx:
 		heartbeat_sfx.stop()
 		heartbeat_sfx.pitch_scale = 1.0
 
-# VALIDATION 
 # =========================
+# VALIDATION FUNCTIONS
+# =========================
+
+## Checks if the required global variables are present in the game state.
+## Implies: A "Fail-Fast" mechanism. It pushes explicit errors to the Godot console 
+## if teammates fail to set up their variables, making debugging instant.
 func _validate_dependencies() -> void:
 	if not state_node:
 		push_error("HeatManager: state_node is null. Dependency Injection failed and Global fallback not found.")
@@ -133,6 +172,7 @@ func _validate_dependencies() -> void:
 	if not "herd_integrity" in state_node:
 		push_error("HeatManager: state_node is missing 'herd_integrity' property.")
 
+## Validates Inspector variables set by designers to prevent math crashes.
 func _validate_config() -> void:
 	if low_thirst_threshold <= 0.0:
 		push_error("HeatManager: low_thirst_threshold must be > 0.0")
