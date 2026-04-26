@@ -35,6 +35,8 @@ signal charge_impact_dealt(target: Node2D, integrity_loss_ratio: float)
 @export var haboob_spawn_center_global: Vector2 = Vector2.ZERO
 ## Used when `L2_Rifle.rifle_hit_boss` fires after armor is already broken (phase two only).
 @export var s17_rifle_damage_exposed: float = 40.0
+## Preview helper: when this boss scene is run directly, cycle phase one then phase two forever.
+@export var preview_loop_phases_when_run_directly: bool = true
 
 var integrity: float
 var phase: Phase = Phase.ONE
@@ -58,6 +60,28 @@ func _ready() -> void:
 	add_to_group("Boss")
 	add_to_group("hazard")
 	visuals.set_phase(phase)
+	if _is_running_as_preview_scene() and preview_loop_phases_when_run_directly:
+		_run_preview_phase_loop()
+
+
+func _is_running_as_preview_scene() -> bool:
+	var scene_root := get_tree().current_scene
+	return scene_root != null and get_parent() == scene_root
+
+
+func _run_preview_phase_loop() -> void:
+	while is_inside_tree():
+		phase = Phase.ONE
+		hyena_king_exposed = false
+		visuals.set_phase(phase)
+		await get_tree().create_timer(visuals.get_phase_animation_duration(phase)).timeout
+		if not is_inside_tree():
+			return
+		phase = Phase.TWO
+		hyena_king_exposed = true
+		phase_two_entered.emit()
+		visuals.set_phase(phase)
+		await get_tree().create_timer(visuals.get_phase_animation_duration(phase)).timeout
 
 
 ## S-17: intended receiver for `L2_Rifle.rifle_hit_boss` (zero-arg signal).

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2x7pr83nhko8"
-path="res://.godot/imported/L3_ScavengerKing_P1_1.png-24ccf799cdeedbc0840e8bc53f62d709.ctex"
+uid="uid://be5nghq75abls"
+path="res://.godot/imported/Hyena.png-6267f1635b2b4ca1d5805edec88ef5ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_26_scavenger_king/Assets/phase1/L3_ScavengerKing_P1_1.png"
-dest_files=["res://.godot/imported/L3_ScavengerKing_P1_1.png-24ccf799cdeedbc0840e8bc53f62d709.ctex"]
+source_file="res://tasks/task_26_scavenger_king/Assets/Sprites/Hyena.png"
+dest_files=["res://.godot/imported/Hyena.png-6267f1635b2b4ca1d5805edec88ef5ee.ctex"]
 
 [params]
 
