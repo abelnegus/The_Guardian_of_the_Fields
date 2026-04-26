@@ -4,114 +4,114 @@
 [ext_resource type="Script" uid="uid://cij74wsc4sljo" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKing.gd" id="2_boss"]
 [ext_resource type="Script" uid="uid://jqhjlcqfb53" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingVisuals.gd" id="3_vis"]
 [ext_resource type="Script" uid="uid://dxk4awxe21myx" path="res://tasks/task_26_scavenger_king/scripts/L3_BossInertHazardArea.gd" id="4_inert"]
-[ext_resource type="Texture2D" uid="uid://be5nghq75abls" path="res://tasks/task_26_scavenger_king/Assets/Sprites/Hyena.png" id="5_hyena"]
+[ext_resource type="Texture2D" uid="uid://be5nghq75abls" path="res://tasks/task_26_scavenger_king/Assets/Sprites/L3_ScavengerKing.png" id="5_scavenger_king"]
 [ext_resource type="Script" uid="uid://c861fxyccpqcf" path="res://tasks/task_26_scavenger_king/scripts/L3_ScavengerKingPreviewCamera.gd" id="6_cam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
 size = Vector2(128, 220)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_00"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(0, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_01"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(235, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_02"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(469, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_03"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(704, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_04"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(939, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_05"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1173, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_07"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(235, 307, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_08"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(469, 307, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_10"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(939, 307, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_11"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1173, 307, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_12"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(0, 614, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_13"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(235, 614, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_14"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(469, 614, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_15"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(704, 614, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_16"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(939, 614, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_17"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1173, 614, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_18"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(0, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_19"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(235, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_20"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(469, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_21"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(704, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_24"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(0, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_25"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(235, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_26"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(469, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_27"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(704, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_28"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(939, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p1_29"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1173, 1229, 234, 306)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1"]
@@ -201,71 +201,71 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_00"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1408, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_01"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1643, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_02"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1877, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_03"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2112, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_04"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2347, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_05"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2581, 0, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_10"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2347, 307, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_11"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2581, 307, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_18"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1408, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_19"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1643, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_20"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1877, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_21"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2112, 922, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_24"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1408, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_25"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1643, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_26"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(1877, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_27"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2112, 1229, 234, 306)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2_28"]
-atlas = ExtResource("5_hyena")
+atlas = ExtResource("5_scavenger_king")
 region = Rect2(2347, 1229, 234, 306)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p2"]
@@ -350,7 +350,7 @@ shape = SubResource("RectangleShape2D_col")
 script = ExtResource("3_vis")
 
 [node name="SpritePhase1" type="AnimatedSprite2D" parent="KingBody/Visuals" index="0" unique_id=1041344326]
-position = Vector2(156, 125)
+position = Vector2(97, 114)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_p1")
 autoplay = "default"

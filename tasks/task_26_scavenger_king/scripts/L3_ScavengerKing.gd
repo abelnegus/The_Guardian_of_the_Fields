@@ -40,7 +40,7 @@ signal charge_impact_dealt(target: Node2D, integrity_loss_ratio: float)
 
 var integrity: float
 var phase: Phase = Phase.ONE
-var hyena_king_exposed: bool = false
+var scavenger_king_exposed: bool = false
 var target: Node2D = null
 
 var _charging: bool = false
@@ -72,13 +72,13 @@ func _is_running_as_preview_scene() -> bool:
 func _run_preview_phase_loop() -> void:
 	while is_inside_tree():
 		phase = Phase.ONE
-		hyena_king_exposed = false
+		scavenger_king_exposed = false
 		visuals.set_phase(phase)
 		await get_tree().create_timer(visuals.get_phase_animation_duration(phase)).timeout
 		if not is_inside_tree():
 			return
 		phase = Phase.TWO
-		hyena_king_exposed = true
+		scavenger_king_exposed = true
 		phase_two_entered.emit()
 		visuals.set_phase(phase)
 		await get_tree().create_timer(visuals.get_phase_animation_duration(phase)).timeout
@@ -247,7 +247,7 @@ func _on_rifle_hit_boss() -> void:
 	if phase != Phase.ONE:
 		return
 	phase = Phase.TWO
-	hyena_king_exposed = true
+	scavenger_king_exposed = true
 	phase_two_entered.emit()
 	armor_breach_audio_cue_requested.emit()
 	visuals.set_phase(phase)

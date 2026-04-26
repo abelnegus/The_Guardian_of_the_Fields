@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be5nghq75abls"
-path="res://.godot/imported/Hyena.png-6267f1635b2b4ca1d5805edec88ef5ee.ctex"
+path="res://.godot/imported/L3_ScavengerKing.png-09a4e24373acb5bb99e16d7825fc9d50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_26_scavenger_king/Assets/Sprites/Hyena.png"
-dest_files=["res://.godot/imported/Hyena.png-6267f1635b2b4ca1d5805edec88ef5ee.ctex"]
+source_file="res://tasks/task_26_scavenger_king/Assets/Sprites/L3_ScavengerKing.png"
+dest_files=["res://.godot/imported/L3_ScavengerKing.png-09a4e24373acb5bb99e16d7825fc9d50.ctex"]
 
 [params]
 
