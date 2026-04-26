@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cda65nqk2a6mi"]
-
-[ext_resource type="Script" uid="uid://ba247xn5uwss1" path="res://Scenes/Templates/Base_Objective.gd" id="1_um1l5"]
-
-[node name="Base_Objective" type="Node2D" unique_id=1078508965]
-script = ExtResource("1_um1l5")
-metadata/_custom_type_script = "uid://ba247xn5uwss1"

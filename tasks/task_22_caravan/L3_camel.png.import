@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8tgovg6kx61k"
-path="res://.godot/imported/L3_camel.png-31271ad4724783efc0438506f8887b09.ctex"
+uid="uid://oybctyoibdi8"
+path="res://.godot/imported/L3_camel.png-f763b1d1094ee45150314dff9d29b26e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://L3_camel.png"
-dest_files=["res://.godot/imported/L3_camel.png-31271ad4724783efc0438506f8887b09.ctex"]
+source_file="res://tasks/task_22_caravan/L3_camel.png"
+dest_files=["res://.godot/imported/L3_camel.png-f763b1d1094ee45150314dff9d29b26e.ctex"]
 
 [params]
 
