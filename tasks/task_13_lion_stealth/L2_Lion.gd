@@ -20,7 +20,6 @@ var patrol_direction = 1
 
 @onready var sprite = $AnimatedSprite2D
 
-# Load animation resources
 @onready var walk_frames = preload("res://tasks/task_13_lion_stealth/L2_Lion_Walk.tres")
 @onready var pounce_frames = preload("res://tasks/task_13_lion_stealth/L2_Lion_Pounce.tres")
 
@@ -29,13 +28,10 @@ func _ready():
 	add_to_group("lion")
 	modulate.a = 1.0
 	
-	# Start with walk animation
 	if walk_frames:
 		sprite.sprite_frames = walk_frames
 		sprite.play("walk")
 		print("LION: Walk animation loaded")
-	else:
-		print("LION: ERROR - Walk animation not found!")
 
 func _physics_process(delta):
 	# Patrol movement
@@ -65,7 +61,7 @@ func _physics_process(delta):
 
 func set_target_zebu(zebu):
 	target_zebu = zebu
-	print("LION: Zebu target set")
+	print("LION: Zebu target set -", zebu.name)
 
 func set_target_player(player):
 	target_player = player
@@ -76,6 +72,15 @@ func set_opacity(value: float):
 		sprite.modulate.a = value
 		is_hidden = (value < 1.0)
 		print("LION: Opacity set to", value)
+
+func damage_zebu():
+	if target_zebu:
+		# Yeabsira's zebu uses take_damage(amount)
+		if target_zebu.has_method("take_damage"):
+			target_zebu.take_damage(50)
+			print("LION: 💥 Damaged zebu - dealt 50 damage")
+		else:
+			print("LION: ⚠️ Zebu has no take_damage method")
 
 func start_pounce():
 	if is_pouncing or on_cooldown:
@@ -88,26 +93,18 @@ func start_pounce():
 	if pounce_frames:
 		sprite.sprite_frames = pounce_frames
 		sprite.play("pounce")
-		print("LION: Pounce animation loaded")
 	
-	# Emit warning signal
 	emit_signal("lion_pounce_warning")
 	print("LION: ⚠️ Warning signal emitted")
 	
-	# Wait 1.5 seconds
 	await get_tree().create_timer(WARNING_TIME).timeout
 	
-	# POUNCE! Make lion fully visible
 	if sprite:
 		sprite.modulate.a = 1.0
 	
-	# Apply damage based on target
+	# Apply damage to zebu
 	if target_zebu:
-		if target_zebu.has_method("take_damage"):
-			target_zebu.take_damage(50)
-			print("LION: 💥 Pounced on ZEBU - 50% damage")
-		else:
-			print("LION: 💥 Pounced on ZEBU (damage method TBD)")
+		damage_zebu()
 	
 	if target_player:
 		print("LION: 💥 Pounced on PLAYER")
@@ -119,7 +116,6 @@ func start_pounce():
 	if walk_frames:
 		sprite.sprite_frames = walk_frames
 		sprite.play("walk")
-		print("LION: Walk animation restored")
 	
 	is_pouncing = false
 	
