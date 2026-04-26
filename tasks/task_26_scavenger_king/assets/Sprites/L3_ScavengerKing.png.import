@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chvnyll7mngui"
-path="res://.godot/imported/L3_ScavengerKing_P1_4.png-f4a13d1b37b594354d89f1fd9a00a538.ctex"
+uid="uid://be5nghq75abls"
+path="res://.godot/imported/L3_ScavengerKing.png-09a4e24373acb5bb99e16d7825fc9d50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_26_scavenger_king/assets/phase1/L3_ScavengerKing_P1_4.png"
-dest_files=["res://.godot/imported/L3_ScavengerKing_P1_4.png-f4a13d1b37b594354d89f1fd9a00a538.ctex"]
+source_file="res://tasks/task_26_scavenger_king/Assets/Sprites/L3_ScavengerKing.png"
+dest_files=["res://.godot/imported/L3_ScavengerKing.png-09a4e24373acb5bb99e16d7825fc9d50.ctex"]
 
 [params]
 
