@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtj4xnh2a8njp"
-path="res://.godot/imported/l0_sprite_4.png-e4fe929589fbd1823387536e25c6faf5.ctex"
+uid="uid://bao4gdevvv3uq"
+path="res://.godot/imported/sprite_05.png-fbf45117540c18fe1fbb763ebb8b283d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_25_jackal/sprites/flee/l0_sprite_4.png"
-dest_files=["res://.godot/imported/l0_sprite_4.png-e4fe929589fbd1823387536e25c6faf5.ctex"]
+source_file="res://tasks/task_25_jackal/sprites/bite/sprite_05.png"
+dest_files=["res://.godot/imported/sprite_05.png-fbf45117540c18fe1fbb763ebb8b283d.ctex"]
 
 [params]
 

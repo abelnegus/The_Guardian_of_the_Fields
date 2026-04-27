@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfyyrsdhltfu"
-path="res://.godot/imported/l0_sprite_1.png-a05b58c4f38eefaea88e841414a3d809.ctex"
+uid="uid://cvd1siss81hcj"
+path="res://.godot/imported/sprite_02.png-4fa759cbd508259ca47038c829a0194f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tasks/task_25_jackal/sprites/bite/l0_sprite_1.png"
-dest_files=["res://.godot/imported/l0_sprite_1.png-a05b58c4f38eefaea88e841414a3d809.ctex"]
+source_file="res://tasks/task_25_jackal/sprites/run/sprite_02.png"
+dest_files=["res://.godot/imported/sprite_02.png-4fa759cbd508259ca47038c829a0194f.ctex"]
 
 [params]
 

@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://bm6o2mb44imqc"]
 
 [ext_resource type="Texture2D" uid="uid://b1idpimni254t" path="res://icon.svg" id="1_vlh6x"]
-[ext_resource type="AudioStream" uid="uid://bq58x34elsp02" path="res://Assets/Audio/L3/L3_Jackal_Barking.wav" id="2_igm85"]
-[ext_resource type="Texture2D" uid="uid://bqb1fgh01o7p7" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_1.png" id="2_roqtl"]
-[ext_resource type="Texture2D" uid="uid://bfyyrsdhltfu" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_1.png" id="2_uhdvi"]
-[ext_resource type="Texture2D" uid="uid://b25gi0tjqmhch" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_2.png" id="3_8xi4i"]
-[ext_resource type="Texture2D" uid="uid://omie8og55sgo" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_2.png" id="3_ie4rm"]
-[ext_resource type="Texture2D" uid="uid://drj3tp6vuowhx" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_3.png" id="4_2e8gd"]
-[ext_resource type="Texture2D" uid="uid://c1tdqoejxqnhd" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_3.png" id="4_7ub0u"]
-[ext_resource type="Texture2D" uid="uid://dbubmmufp1jhm" path="res://tasks/task_25_jackal/sprites/run/l0_sprite_4.png" id="5_3amd5"]
-[ext_resource type="Texture2D" uid="uid://wfynlbpk3gfe" path="res://tasks/task_25_jackal/sprites/bite/l0_sprite_4.png" id="5_v2u1w"]
-[ext_resource type="Texture2D" uid="uid://buleb33kfn5qx" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_1.png" id="6_6qse5"]
-[ext_resource type="Texture2D" uid="uid://8qaj6nnn8hsm" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_2.png" id="7_igm85"]
-[ext_resource type="Texture2D" uid="uid://c417nxrg53dq1" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_3.png" id="8_7qguo"]
-[ext_resource type="Texture2D" uid="uid://dtj4xnh2a8njp" path="res://tasks/task_25_jackal/sprites/flee/l0_sprite_4.png" id="9_vkihd"]
+[ext_resource type="AudioStream" uid="uid://c22rtgos2ohxk" path="res://tasks/task_25_jackal/audio/L3_Jackal_Barking.wav" id="2_igm85"]
+[ext_resource type="Texture2D" uid="uid://dn2ugtgprf2ax" path="res://tasks/task_25_jackal/sprites/bite/sprite_04.png" id="3_igm85"]
+[ext_resource type="Texture2D" uid="uid://bao4gdevvv3uq" path="res://tasks/task_25_jackal/sprites/bite/sprite_05.png" id="4_7qguo"]
+[ext_resource type="Texture2D" uid="uid://wnioc850w0uy" path="res://tasks/task_25_jackal/sprites/bite/sprite_06.png" id="5_vkihd"]
+[ext_resource type="Texture2D" uid="uid://dymd2fybsyw6x" path="res://tasks/task_25_jackal/sprites/bite/sprite_07.png" id="6_tq4ls"]
+[ext_resource type="Texture2D" uid="uid://csfgg8t10huqh" path="res://tasks/task_25_jackal/sprites/flee/sprite_08.png" id="7_igm85"]
+[ext_resource type="Texture2D" uid="uid://b1pdolcfbkhjc" path="res://tasks/task_25_jackal/sprites/flee/sprite_09.png" id="8_7qguo"]
+[ext_resource type="Texture2D" uid="uid://b3d3bfqdu0ibh" path="res://tasks/task_25_jackal/sprites/flee/sprite_10.png" id="9_vkihd"]
+[ext_resource type="Texture2D" uid="uid://dvo5hnhgjyk81" path="res://tasks/task_25_jackal/sprites/flee/sprite_11.png" id="10_tq4ls"]
+[ext_resource type="Texture2D" uid="uid://27yqpcb57lxa" path="res://tasks/task_25_jackal/sprites/run/sprite_00.png" id="11_igm85"]
+[ext_resource type="Texture2D" uid="uid://c6w1gvjijckqa" path="res://tasks/task_25_jackal/sprites/run/sprite_01.png" id="12_7qguo"]
+[ext_resource type="Texture2D" uid="uid://cvd1siss81hcj" path="res://tasks/task_25_jackal/sprites/run/sprite_02.png" id="13_vkihd"]
+[ext_resource type="Texture2D" uid="uid://dnvcpvje65phx" path="res://tasks/task_25_jackal/sprites/run/sprite_03.png" id="14_tq4ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7ue7"]
 
@@ -23,25 +23,22 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_uhdvi")
+"texture": ExtResource("3_igm85")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ie4rm")
+"texture": ExtResource("4_7qguo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_7ub0u")
+"texture": ExtResource("5_vkihd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_v2u1w")
+"texture": ExtResource("6_tq4ls")
 }],
 "loop": true,
 "name": &"bite",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_6qse5")
-}, {
 "duration": 1.0,
 "texture": ExtResource("7_igm85")
 }, {
@@ -50,23 +47,26 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_vkihd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tq4ls")
 }],
 "loop": true,
 "name": &"flee",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_roqtl")
+"texture": ExtResource("11_igm85")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_8xi4i")
+"texture": ExtResource("12_7qguo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2e8gd")
+"texture": ExtResource("13_vkihd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_3amd5")
+"texture": ExtResource("14_tq4ls")
 }],
 "loop": true,
 "name": &"run",
@@ -95,12 +95,12 @@ shape = SubResource("RectangleShape2D_xcoyf")
 
 [node name="BarkSound" type="AudioStreamPlayer2D" parent="." unique_id=773425747]
 stream = ExtResource("2_igm85")
-autoplay = true
+area_mask = 69
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=918860610]
 texture_filter = 1
 position = Vector2(250, 150)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uhdvi")
-animation = &"flee"
-autoplay = "flee"
+animation = &"bite"
+autoplay = "bite"

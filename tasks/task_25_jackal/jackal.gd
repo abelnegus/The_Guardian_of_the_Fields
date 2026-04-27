@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var navigation_agent = $NavigationAgent2D
 @onready var bite_area = $BiteArea
 @onready var flee_timer = $FleeTimer
-@onready var bark_sound = $BarkSound  # Audio player
+@onready var bark_sound = $BarkSound
 
 # === STATE ===
 enum State { HUNTING, FLEEING }
@@ -28,7 +28,6 @@ func _ready():
 	await get_tree().create_timer(0.5).timeout
 	find_nearest_camel()
 	
-	# === AUDIO: Bark on spawn (aggro) ===
 	_play_bark()
 
 func _physics_process(delta):
@@ -67,7 +66,6 @@ func find_nearest_camel():
 	
 	if closest_camel != null and closest_camel != target_camel:
 		target_camel = closest_camel
-		# === AUDIO: Bark when锁定 new target (aggro) ===
 		_play_bark()
 
 func _on_bite_area_entered(body):
@@ -103,7 +101,6 @@ func hit_by_gile():
 	
 	sprite.play("flee")
 	
-	# === AUDIO: Bark on flee (hit by dagger) ===
 	_play_bark()
 	
 	jackal_hit.emit()
@@ -117,15 +114,12 @@ func _on_flee_timeout():
 	current_state = State.HUNTING
 	sprite.play("run")
 	find_nearest_camel()
-	
-	# === AUDIO: Bark when returning to hunt ===
 	_play_bark()
 
-# === AUDIO HELPER FUNCTION ===
+func die():
+	queue_free()
+
 func _play_bark():
 	if bark_sound and bark_sound.stream:
 		bark_sound.pitch_scale = randf_range(0.8, 1.2)
 		bark_sound.play()
-
-func die():
-	queue_free()
