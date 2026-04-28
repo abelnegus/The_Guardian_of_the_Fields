@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cayurf8x6jj8k"]
+
+[ext_resource type="Script" uid="uid://b2jluaj5hffj2" path="res://tasks/task_22_caravan/L3_Caravan.gd" id="1_k0f1q"]
+[ext_resource type="Texture2D" uid="uid://c4ujlmcsilfet" path="res://tasks/task_22_caravan/L3_Camel.png" id="2_gkngf"]
+
+[sub_resource type="Curve2D" id="Curve2D_k0f1q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -308, 28.942139, 0, 0, 0, 0, 980.9619, 22, 0, 0, 0, 0, -1065, 5.988037)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7cjo"]
+size = Vector2(600, 150)
+
+[node name="L3_Caravan" type="Node2D" unique_id=877785775]
+script = ExtResource("1_k0f1q")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1656802591]
+position = Vector2(0, 400)
+scale = Vector2(1, 1.002)
+curve = SubResource("Curve2D_k0f1q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1879069071]
+position = Vector2(-308, 28.942139)
+rotates = false
+loop = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D" unique_id=1168011996]
+texture = ExtResource("2_gkngf")
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 1024)
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D" unique_id=684696162]
+scale = Vector2(1.002004, 1)
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D" unique_id=601995230]
+shape = SubResource("RectangleShape2D_s7cjo")

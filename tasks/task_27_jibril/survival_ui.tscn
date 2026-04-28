@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8g8jxy1lnp7f"]
 
-[ext_resource type="Script" uid="uid://b2teiw56l411r" path="res://tasks/task_27_jibril/progress_bar.gd" id="1_nm36p"]
+[ext_resource type="Script" uid="uid://b2teiw56l411r" path="res://tasks/task_27_jibril/L3_ProgressBar.gd" id="1_nm36p"]
 
 [node name="SurvivalUI" type="Control" unique_id=1273136462]
 layout_mode = 3

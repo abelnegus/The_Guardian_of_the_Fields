@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bgtwewllf8i7i"]
+
+[ext_resource type="Script" uid="uid://e0wc4xrow831" path="res://tasks/task_20_amanuel/L3_HeatManager.gd" id="1_7aut0"]
+[ext_resource type="AudioStream" uid="uid://c8o5wi8arxxl" path="res://tasks/task_20_amanuel/L3_heartbeat.wav" id="1_p1u51"]
+
+[node name="L3_HeatManager" type="Node" unique_id=792601169]
+script = ExtResource("1_7aut0")
+
+[node name="HeartbeatSFX" type="AudioStreamPlayer2D" parent="." unique_id=2110976644]
+stream = ExtResource("1_p1u51")

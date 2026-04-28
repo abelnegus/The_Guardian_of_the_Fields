@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ctm8m6gacuy2a"]
+
+[ext_resource type="Texture2D" uid="uid://b8hf8730qu8k5" path="res://tasks/task_23_water_source/Sprites/L3_WaterGourd_Glow.png" id="1_fitvo"]
+
+[sub_resource type="GDScript" id="GDScript_fitvo"]
+script/source = "extends Area2D
+
+# S-23: Water Source - Afar Water Gourd
+# Dependency D-15: Confirmed with S-20 Amanuel
+# Variable: Global.player_thirst (float, 0-100)
+# Action: Set to 100 on interact
+# Sprites: glow (ready), empty (cooldown), base (fallback)
+
+@onready var sprite: Sprite2D = $Sprite
+@onready var cooldown_timer: Timer = $CooldownTimer
+
+var is_available: bool = true
+
+func _ready() -> void:
+	body_entered.connect(_on_body_entered)
+	cooldown_timer.timeout.connect(_on_cooldown_finished)
+	_update_sprite()
+
+func _on_body_entered(body: Node2D) -> void:
+	if not is_available:
+		return
+	
+	# Check if TheGuardian touched the water source
+	if body.name == \"TheGuardian\" or body.is_in_group(\"Guardian\"):
+		_restore_thirst()
+
+func _restore_thirst() -> void:
+	# D-15: Reset thirst to 100 (S-20 Amanuel's variable)
+	Global.player_thirst = 100.0
+	
+	# Start 30-second cooldown
+	is_available = false
+	cooldown_timer.start()
+	_update_sprite()
+	
+	# Play drink sound if available
+	if $DrinkSound:
+		$DrinkSound.play()
+
+func _on_cooldown_finished() -> void:
+	is_available = true
+	_update_sprite()
+
+func _update_sprite() -> void:
+	var base_path = \"res://tasks/task_23_water_source/sprites/\"
+	
+	# Load all three sprites
+	var base_tex = load(base_path + \"water_gourd_base.png\")
+	var glow_tex = load(base_path + \"water_gourd_glow.png\")
+	var empty_tex = load(base_path + \"water_gourd_empty.png\")
+	
+	if is_available:
+		# Use GLOW sprite if available, otherwise BASE as fallback
+		sprite.texture = glow_tex if glow_tex else base_tex
+		sprite.modulate = Color(1, 1, 1, 1)
+	else:
+		# Use EMPTY sprite if available, otherwise BASE as fallback
+		sprite.texture = empty_tex if empty_tex else base_tex
+		sprite.modulate = Color(0.5, 0.5, 0.5, 1)
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7o5h"]
+radius = 32.0
+
+[node name="L3_WaterSource" type="Area2D" unique_id=95077836]
+script = SubResource("GDScript_fitvo")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=310927857]
+position = Vector2(85, 43)
+texture = ExtResource("1_fitvo")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=628220047]
+position = Vector2(-6, 25)
+shape = SubResource("CircleShape2D_c7o5h")
+
+[node name="CooldownTimer" type="Timer" parent="." unique_id=719276452]
+wait_time = 30.0
+one_shot = true
+
+[node name="DrinkSound" type="AudioStreamPlayer2D" parent="." unique_id=1703712194]
+position = Vector2(50, 32)
