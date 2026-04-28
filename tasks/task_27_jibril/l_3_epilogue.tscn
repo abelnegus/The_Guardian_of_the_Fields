@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bneqhmontogcr"]
+
+[ext_resource type="Texture2D" path="res://tasks/task_27_jibril/emperor_portrait.png.png" id="1_871fy"]
+[ext_resource type="AudioStream" uid="uid://dmrsrm2re146j" path="res://tasks/task_27_jibril/L3_Begena_Harp.ogg" id="2_n07xb"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n07xb"]
+diffuse_texture = ExtResource("1_871fy")
+texture_filter = 1
+
+[node name="L3_Epilogue" type="Control" unique_id=319059380]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(855, 256)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2109717921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-4, 11)
+color = Color(0, 0, 0.2901961, 1)
+
+[node name="EmperorPortrait" type="TextureRect" parent="." unique_id=22092047]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 470.0
+offset_top = 50.0
+offset_right = 598.0
+offset_bottom = 178.0
+pivot_offset = Vector2(592, 779)
+texture = SubResource("CanvasTexture_n07xb")
+
+[node name="CreditsText" type="Label" parent="." unique_id=1120074298]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 240.0
+offset_right = 1004.0
+offset_bottom = 445.0
+pivot_offset = Vector2(784, 918)
+text = "Group 1: The Highlands
+Leul, Melkam, Nole, Lemi, Mebratu, Yohannes, Zacharias, Ermias G., Samuel, Ayyub.
+
+Group 2: The Savannah
+Misgana, Yeabsira, Kaleab S., Saleamlak, Amanti, Yohannes M., Kaleab N., Yonathan, Tesfahun, Ermias K.
+
+Group 3: The Salt Plains
+Ahmed, Yidnekachew, Amanuel, Abel, Eyob W., Fulea, Yoseph Alene, Kalkidan, Bernabas, Jibril."
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=834912281]
+stream = ExtResource("2_n07xb")
+autoplay = true

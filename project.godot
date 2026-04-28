@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The_Guardian_of_the_Fields"
-
+run/main_scene="uid://0vklvbebm1gt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

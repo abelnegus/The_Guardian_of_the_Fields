@@ -1,21 +1,14 @@
-extends ProgressBar
+extends HeatManager
 
 func _ready() -> void:
-	# 1. Set the bar limits
-	min_value = 0.0
-	max_value = 100.0
+	super._ready() # Calls Amanuel's setup logic
 	
-	# 2. Look for Amanuel's node in the scene and connect to it
-	# This assumes Amanuel's node is named "HeatManager" in the scene tree
-	var heat_node = get_tree_root_find_node("HeatManager") 
+	# We use set() so Godot doesn't check the type until the game actually starts
+	set("min_value", 0.0)
+	set("max_value", 100.0)
+
+func _process(delta: float) -> void:
+	super._process(delta) # Calls Amanuel's survival math
 	
-	if heat_node:
-		heat_node.thirst_changed_ui.connect(_on_thirst_updated)
-
-# 3. This function runs only when Amanuel's code says the thirst changed
-func _on_thirst_updated(new_val: float) -> void:
-	value = new_val
-
-# Helper function to find the node anywhere in the game
-func get_tree_root_find_node(node_name: String) -> Node:
-	return get_tree().root.find_child(node_name, true, false)
+	if state_node:
+		set("value", state_node.player_thirst)

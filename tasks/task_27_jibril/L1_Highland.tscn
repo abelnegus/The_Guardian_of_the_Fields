@@ -1,14 +1,5 @@
 [gd_scene format=3 uid="uid://0vklvbebm1gt"]
 
-[ext_resource type="Script" uid="uid://onvhqum57tom" path="res://Scripts/GameManager.gd" id="1_gm"]
-[ext_resource type="Texture2D" uid="uid://43cy6m7rgtml" path="res://Assets/Graphics/5976551051311647897_120.jpg" id="2_d8l2y"]
-[ext_resource type="Script" uid="uid://x8fqf5kmecn8" path="res://Scripts/HarvestHealth.gd" id="2_hh"]
-[ext_resource type="Texture2D" uid="uid://b47jtl3ucphi8" path="res://Assets/Sprites/teff_field.png" id="3_50fir"]
-[ext_resource type="PackedScene" uid="uid://bt33os4lwm1op" path="res://Scenes/Player/Player.tscn" id="3_pl"]
-[ext_resource type="PackedScene" uid="uid://dhkyiyodtvm6i" path="res://Scenes/UI/HUD.tscn" id="4_hud"]
-[ext_resource type="PackedScene" uid="uid://w7xfpwcbs7wx" path="res://Scenes/Player/L1_Wenchif.tscn" id="5_acou3"]
-[ext_resource type="PackedScene" path="res://Scenes/Props/RiverStonePile.tscn" id="5_rp"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 size = Vector2(2560, 50)
 
@@ -20,14 +11,12 @@ normal = Vector2(-1, 0)
 distance = -2.0
 
 [node name="Level1" type="Node2D" unique_id=1111159660 groups=["harvest_manager"]]
-script = ExtResource("1_gm")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1473870707]
 offset_left = -602.0
 offset_top = -384.0
 offset_right = 1911.0
 offset_bottom = 602.0
-texture = ExtResource("2_d8l2y")
 expand_mode = 1
 stretch_mode = 6
 
@@ -69,7 +58,6 @@ offset_left = 716.0
 offset_top = 448.0
 offset_right = 1170.0
 offset_bottom = 571.0
-texture = ExtResource("3_50fir")
 
 [node name="TeffCrops" type="ColorRect" parent="." unique_id=363941090]
 visible = false
@@ -80,18 +68,17 @@ offset_bottom = 558.0
 color = Color(0.8, 0.7, 0.2, 1)
 
 [node name="HarvestHealth" type="Node" parent="." unique_id=152016261]
-script = ExtResource("2_hh")
 
-[node name="Player" parent="." unique_id=443236406 instance=ExtResource("3_pl")]
+[node name="Player" parent="." unique_id=443236406]
 position = Vector2(640, 570)
 
-[node name="Wenchif" parent="." unique_id=1106747571 instance=ExtResource("5_acou3")]
+[node name="Wenchif" parent="." unique_id=1106747571]
 position = Vector2(645, 513)
 
-[node name="RiverStonePile" parent="." unique_id=12434380 instance=ExtResource("5_rp")]
+[node name="RiverStonePile" parent="." unique_id=12434380]
 position = Vector2(250, 570)
 
-[node name="HUD" parent="." unique_id=541417311 instance=ExtResource("4_hud")]
+[node name="HUD" parent="." unique_id=541417311]
 
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=2083155474]
 position = Vector2(35, 15)

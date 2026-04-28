@@ -13,8 +13,8 @@ grow_vertical = 2
 [node name="progress_bar_gd" type="ProgressBar" parent="." unique_id=180981898]
 custom_minimum_size = Vector2(600, 40)
 layout_mode = 1
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 620.0
-offset_bottom = 60.0
+offset_left = 26.0
+offset_top = 15.0
+offset_right = 626.0
+offset_bottom = 55.0
 script = ExtResource("1_nm36p")
