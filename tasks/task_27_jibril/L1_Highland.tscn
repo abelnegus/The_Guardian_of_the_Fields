@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://0vklvbebm1gt"]
+
+[ext_resource type="Script" uid="uid://onvhqum57tom" path="res://Scripts/GameManager.gd" id="1_gm"]
+[ext_resource type="Texture2D" uid="uid://43cy6m7rgtml" path="res://Assets/Graphics/5976551051311647897_120.jpg" id="2_d8l2y"]
+[ext_resource type="Script" uid="uid://x8fqf5kmecn8" path="res://Scripts/HarvestHealth.gd" id="2_hh"]
+[ext_resource type="Texture2D" uid="uid://b47jtl3ucphi8" path="res://Assets/Sprites/teff_field.png" id="3_50fir"]
+[ext_resource type="PackedScene" uid="uid://bt33os4lwm1op" path="res://Scenes/Player/Player.tscn" id="3_pl"]
+[ext_resource type="PackedScene" uid="uid://dhkyiyodtvm6i" path="res://Scenes/UI/HUD.tscn" id="4_hud"]
+[ext_resource type="PackedScene" uid="uid://w7xfpwcbs7wx" path="res://Scenes/Player/L1_Wenchif.tscn" id="5_acou3"]
+[ext_resource type="PackedScene" path="res://Scenes/Props/RiverStonePile.tscn" id="5_rp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(2560, 50)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_walls"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wall2"]
+normal = Vector2(-1, 0)
+distance = -2.0
+
+[node name="Level1" type="Node2D" unique_id=1111159660 groups=["harvest_manager"]]
+script = ExtResource("1_gm")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1473870707]
+offset_left = -602.0
+offset_top = -384.0
+offset_right = 1911.0
+offset_bottom = 602.0
+texture = ExtResource("2_d8l2y")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=709820307 groups=["ground"]]
+position = Vector2(640, 595)
+collision_layer = 4
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="Ground" unique_id=30071164]
+offset_left = -1280.0
+offset_top = -25.0
+offset_right = 1280.0
+offset_bottom = 25.0
+color = Color(0.25, 0.45, 0.2, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=909766199]
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=881258338]
+position = Vector2(-641, 281)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1674826556]
+position = Vector2(28, 9)
+shape = SubResource("WorldBoundaryShape2D_walls")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1415819952]
+position = Vector2(1881, 416)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=283199847]
+position = Vector2(-24, 22)
+shape = SubResource("WorldBoundaryShape2D_wall2")
+
+[node name="Teff_Field" type="TextureRect" parent="." unique_id=375591402]
+offset_left = 716.0
+offset_top = 448.0
+offset_right = 1170.0
+offset_bottom = 571.0
+texture = ExtResource("3_50fir")
+
+[node name="TeffCrops" type="ColorRect" parent="." unique_id=363941090]
+visible = false
+offset_left = 813.0
+offset_top = 508.0
+offset_right = 1213.0
+offset_bottom = 558.0
+color = Color(0.8, 0.7, 0.2, 1)
+
+[node name="HarvestHealth" type="Node" parent="." unique_id=152016261]
+script = ExtResource("2_hh")
+
+[node name="Player" parent="." unique_id=443236406 instance=ExtResource("3_pl")]
+position = Vector2(640, 570)
+
+[node name="Wenchif" parent="." unique_id=1106747571 instance=ExtResource("5_acou3")]
+position = Vector2(645, 513)
+
+[node name="RiverStonePile" parent="." unique_id=12434380 instance=ExtResource("5_rp")]
+position = Vector2(250, 570)
+
+[node name="HUD" parent="." unique_id=541417311 instance=ExtResource("4_hud")]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=2083155474]
+position = Vector2(35, 15)
+
+[node name="BirdSpawnL" type="Marker2D" parent="SpawnPoints" unique_id=926026373]
+position = Vector2(-634, -322)
+
+[node name="BirdSpawnR" type="Marker2D" parent="SpawnPoints" unique_id=1943141795]
+position = Vector2(1861, -320)
+
+[node name="BaboonSpawnL" type="Marker2D" parent="SpawnPoints" unique_id=280023206]
+position = Vector2(-623, 537)
+
+[node name="BaboonSpawnR" type="Marker2D" parent="SpawnPoints" unique_id=2113217351]
+position = Vector2(1833, 529)
