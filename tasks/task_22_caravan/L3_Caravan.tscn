@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dy5lqiqd8culx"]
 
 [ext_resource type="Texture2D" uid="uid://oybctyoibdi8" path="res://tasks/task_22_caravan/L3_camel.png" id="1_8ssju"]
-[ext_resource type="Script" uid="uid://dti2xxq8muwt2" path="res://tasks/task_22_caravan/L3_caravan.gd" id="1_r7xhy"]
+[ext_resource type="Script" uid="uid://gbii15obhwr8" path="res://tasks/task_22_caravan/l_3_caravan.gd" id="1_r7xhy"]
 
 [sub_resource type="Curve2D" id="Curve2D_7mwad"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 71, -2, 0, 0, 0, 0, 634, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 71, 54, 0, 0, 0, 0, 1103, 59)
 }
 point_count = 2
 
@@ -20,30 +20,29 @@ animations = [{
 "texture": SubResource("AtlasTexture_r7xhy")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"walk",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ssju"]
-size = Vector2(99.04556, 31.797344)
+size = Vector2(56, 19)
 
-[node name="L3_Caravan" type="Path2D" unique_id=1451506272]
+[node name="L3_Caravan" type="Path2D" unique_id=1156560770]
 curve = SubResource("Curve2D_7mwad")
 script = ExtResource("1_r7xhy")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=360315867]
-position = Vector2(71, -2)
-rotation = 0.0035523828
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1662597706]
+position = Vector2(71, 54)
+rotation = 0.004844923
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D" unique_id=2136351827]
-position = Vector2(6.460453, 0)
-scale = Vector2(1.8075566, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D" unique_id=135432227]
 sprite_frames = SubResource("SpriteFrames_gfyiq")
-speed_scale = 3.0
+animation = &"walk"
+autoplay = "walk"
 offset = Vector2(0, 40)
 
-[node name="Area2D" type="Area2D" parent="PathFollow2D" unique_id=1810998891]
+[node name="Area2D" type="Area2D" parent="PathFollow2D" unique_id=2029292783]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D" unique_id=663531734]
-position = Vector2(13.120696, 33.9536)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Area2D" unique_id=1661913594]
+position = Vector2(1, -3.5)
 shape = SubResource("RectangleShape2D_8ssju")
